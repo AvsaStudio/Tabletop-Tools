@@ -19,7 +19,7 @@ function canCastSpell(isSpellPrepared, hasScroll) {
  */
 function isHidden(hiding, aware) {
   // TODO
-  if 
+  return hiding || !aware;
 }
 
 /**
