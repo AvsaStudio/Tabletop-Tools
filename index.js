@@ -118,6 +118,15 @@ function getProficiencyBonus(level, rank) {
  */
 function getCoverBonus(behindObstacle, takingCover) {
   // TODO
+  if (!behindObstacle) {
+    return 0;
+  }
+
+  if (takingCover) {
+    return 4;
+  }
+
+  return 2;
 }
 
 /**
@@ -134,6 +143,14 @@ function getCoverBonus(behindObstacle, takingCover) {
  */
 function getRemainingHp(maxHp, currentHp, damage) {
   // TODO
+  if (damage >= 2 * maxHp) {
+    return -1;
+  }
+
+  if (currentHp - damage <= 0) {
+    return 0;
+  }
+  return currentHp - damage;
 }
 
 /**
@@ -146,6 +163,19 @@ function getRemainingHp(maxHp, currentHp, damage) {
  */
 function canSee(light, vision) {
   // TODO
+  if (vision === "dark") {
+    return true;
+  }
+
+  if (light === "bright") {
+    return true;
+  }
+
+  if (light === "dim" && vision === "low-light") {
+    return true;
+  }
+
+  return false;
 }
 
 /**
