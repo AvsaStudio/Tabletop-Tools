@@ -64,12 +64,15 @@ function doesStrikeCrit(attack, ac) {
  */
 function heal(maxHp, currentHp, healAmount) {
   // TODO
-  let total = currentHp + healAmount;
+  /**  let total = currentHp + healAmount;
   if (healAmount > total) {
     return MaxHp;
   } else {
     return total;
   }
+*/
+  const hp = currentHp + healAmount;
+  return hp > maxHp ? maxHp : hp;
 }
 
 /**
@@ -90,6 +93,17 @@ function heal(maxHp, currentHp, healAmount) {
  */
 function getProficiencyBonus(level, rank) {
   // TODO
+  if (rank === "untrained") {
+    return 0;
+  } else if (rank === "trained") {
+    return level + 2;
+  } else if (rank === "expert") {
+    return level + 4;
+  } else if (rank === "master") {
+    return level + 6;
+  } else if (rank === "legendary") {
+    return level + 8;
+  }
 }
 
 /**
