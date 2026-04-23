@@ -47,6 +47,11 @@ function doesStrikeHit(attack, ac) {
  */
 function doesStrikeCrit(attack, ac) {
   // TODO
+  if (attack >= 10 + ac) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 /**
