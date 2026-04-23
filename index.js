@@ -190,4 +190,13 @@ function canSee(light, vision) {
  */
 function getStrikeDamage(attack, ac, damage) {
   // TODO
+  if (!doesStrikeHit(attack, ac)) {
+    return 0;
+  }
+
+  if (doesStrikeCrit(attack, ac)) {
+    return damage * 2;
+  }
+
+  return damage;
 }
